@@ -15,6 +15,7 @@ public class DarkMode extends JFrame implements ActionListener {
 	JLabel text = new JLabel();
 	JButton btnOn = new JButton();
 	JButton btnOff = new JButton();
+	JButton exit = new JButton();
 
 	public DarkMode() {
 		text.setText("Dark Mode");
@@ -32,8 +33,14 @@ public class DarkMode extends JFrame implements ActionListener {
 		btnOff.setBackground(Color.white);
 		btnOff.setFocusable(false);
 		btnOff.addActionListener(this);
+		
+		exit.setText("EXIT");
+		exit.setBounds(70, 150, 100, 30);
+		exit.setBackground(Color.white);
+		exit.setFocusable(false);
+		exit.addActionListener(this);
 
-		this.setSize(250, 220);
+		this.setSize(250, 250);
 		this.getContentPane().setBackground(Color.white);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -42,6 +49,7 @@ public class DarkMode extends JFrame implements ActionListener {
 		this.add(btnOff);
 		this.add(btnOn);
 		this.add(text);
+		this.add(exit);
 
 	}
 
@@ -55,6 +63,8 @@ public class DarkMode extends JFrame implements ActionListener {
 			btnOn.setForeground(Color.white);
 			btnOff.setBackground(Color.black);
 			btnOff.setForeground(Color.white);
+			exit.setBackground(Color.black);
+			exit.setForeground(Color.white);
 		}
 
 		if (e.getSource() == btnOff) {
@@ -64,6 +74,12 @@ public class DarkMode extends JFrame implements ActionListener {
 			btnOn.setForeground(Color.black);
 			btnOff.setBackground(Color.white);
 			btnOff.setForeground(Color.black);
+			exit.setBackground(Color.white);
+			exit.setForeground(Color.black);
+		}
+		
+		if (e.getSource() == exit) {
+			System.exit(0);
 		}
 	}
 
